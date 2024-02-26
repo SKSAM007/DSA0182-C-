@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+class Sum {
+private:
+    int value;
+
+public:
+    Sum() : value(0) {}
+    Sum(int val) : value(val) {}
+
+    Sum operator+(const Sum& other) {
+        Sum result;
+        result.value = this->value + other.value;
+        return result;
+    }
+
+    int getValue() const {
+        return value;
+    }
+};
+
+int main() {
+    Sum num1(5);
+    Sum num2(10);
+
+    Sum total = num1 + num2;
+
+    cout << "Total: " << total.getValue() << endl;
+
+    return 0;
+}
